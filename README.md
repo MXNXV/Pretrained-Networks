@@ -1,1 +1,7 @@
 # Pretrained-Networks
+
+If you feel adventurous, take a pretrained neural network (it doesn't have to be the same one you used earlier in Q1) and fine-tune it on 240 randomly chosen images from the set of 360 rock images we used in HW3. Use the remaining 120 images for validation to help you choose the best hyperparameters. To do fine-tuning, the layer prior to the output layer should have 8 neurons (the output layer will have 3 neurons since we have 3 rock categories).
+
+Compute the correlation coefficients between the network data and human data for each of 8 neurons (similar to HW3, using procrustes analysis) using the images from the validation set (120 images). Then, compute the correlation coefficients for the 120 images from the test set (do not use the test set to tune the hyperparameters). Report each of the 8 correlation coefficients and your average correlation coefficients (please mark in the bold with large font so we can easily find it).
+
+Few suggestions: it won't be easy to get a significant correlation. Architectures like ResNet are not likely to work. Vision transformers might be worth a shot. There are plenty of pretraiend models here: https://huggingface.co/models?pipeline_tag=image-classification&sort=trendingLinks to an external site.. You will probably want to have an efficient way to explore the hyperparameters. For example, you can use tools like Keras Tuner or submit a bunch of jobs to the cluster with various parameter configurations.
